@@ -518,8 +518,8 @@ Seq: 6</text>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="MMPF0100F3A-1" prefix="U">
-<description>&lt;p&gt;The PF0100 SMARTMOS power management integrated circuit (PMIC) provides a highly programmable/ configurable architecture, with fully integrated power devices and minimal external components. With up to six buck converters, six linear regulators, RTC supply, and coin-cell charger, the PF0100 can provide power for a complete system, including applications processors, memory, and system peripherals, in a wide range of applications. With on-chip one time programmable (OTP) memory, the PF0100 is available in pre-programmed standard versions, or non-programmed to support custom programming. The PF0100 is defined to power an entire embedded MCU platform solution such as i.MX 6 based eReader, IPTV, medical monitoring, and home/factory automation.&lt;/p&gt;&lt;br&gt;&lt;i&gt;Connect-List generated from &lt;/i&gt;&lt;b&gt;MMPF0100*A.DEV&lt;/b&gt; Variant &lt;b&gt;EP&lt;/b&gt; with &lt;i&gt;&lt;b&gt;connect-device-split-symbol.ulp&lt;/b&gt;&lt;/i&gt;</description>
+<deviceset name="MMPF0100F3A" prefix="U">
+<description>PMIC for i.MX6 processors</description>
 <gates>
 <gate name="G$1" symbol="PF0100.CTRL" x="-40.64" y="58.42"/>
 <gate name="G$2" symbol="PF0100.LDO" x="-38.1" y="-17.78"/>
