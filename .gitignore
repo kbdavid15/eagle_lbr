@@ -148,3 +148,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+#api keys
+key.txt

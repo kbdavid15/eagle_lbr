@@ -1,12 +1,32 @@
 import requests
 import json
+import time
 
 MAX_QUERIES_PER_REQUEST = 20
+OCTOPART_API_KEY = ''
 
 def chunks(l, n):
     """Yield successive n-sized chunks from l."""
     for i in range(0, len(l), n):
         yield l[i:i + n]
+
+def get_api_key():
+    if OCTOPART_API_KEY == '':
+        with open('key.txt') as f:
+            content = f.readlines()
+        OCTOPART_API_KEY = content[0]
+    return OCTOPART_API_KEY
+
+def request_handle_timeout(url, params):
+    retry_count = 0
+    while retry_count < 3:
+        r = requests.get(url, params)
+        if r.status_code == 200:
+            break
+        elif r.status_code == 429:
+            time.sleep(1)   # wait 1 second, exceeded 3 api calls/second
+        retry_count += 1
+    return r
 
 def get_specs_from_octopart(mpn_list):
     "Takes a list of mpn strings, and gets the specs from octopart. Returns dict of information"
@@ -19,11 +39,11 @@ def get_specs_from_octopart(mpn_list):
 
         params = {
             'queries':json.dumps(query),
-            'apikey':'0c9d5f73',
+            'apikey': get_api_key(),
             'include[]':'specs',
         }
 
-        r = requests.get(url, params)
+        r = request_handle_timeout(url, params)
         if r.ok:
             response = r.json()
             for result in response['results']:
@@ -43,10 +63,11 @@ if __name__ == '__main__':
 
 
     # print mpn's
-    for item in response['items']:
-        print(item['mpn'])
-        for spec, value in item['specs']:
-            print(spec + ' ' + item['specs'][spec]['display_value'])
-        break
+    for part in response:
+        for item in part['items']:
+            print(item['mpn'])
+            for spec, value in item['specs']:
+                print(spec + ' ' + item['specs'][spec]['display_value'])
+            break
 
 
