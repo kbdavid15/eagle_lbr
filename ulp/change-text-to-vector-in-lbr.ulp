@@ -1,0 +1,90 @@
+#usage 	"<b>Changes Font of all texts to Vector in a library</b>\n"
+       	"<author>Author: hanak.pavel@post.cz </author>"
+
+string ulp_path = "";
+string script_change = "";
+
+int Result = 0;
+string grid = "GRID MIL FINEST;\n";
+
+void DoPackage(UL_PACKAGE P) {
+
+    real dx, dy;
+
+    P.texts(T) {
+        dx = u2mil(T.x);
+        dy = u2mil(T.y);
+       	printf("CHANGE FONT VECTOR (%.3f %.3f);\n", dx, dy);
+                
+    }
+}
+
+void DoSymbol(UL_SYMBOL P) {
+
+    real dx, dy;
+
+    P.texts(T) {
+        dx = u2mil(T.x);
+        dy = u2mil(T.y);
+       	printf("CHANGE FONT VECTOR (%.3f %.3f);\n", dx, dy);
+                
+    }
+}
+
+
+
+if (library) {
+   char bkslash = '/';
+   int pos = strrchr(argv[0], bkslash);
+   if (pos >= 0) {
+      ulp_path = strsub(argv[0], 0, pos + 1);
+   }
+   int n = 0;
+   library(L) {
+   int posb = strrchr(argv[0], bkslash);
+   if (posb >= 0) {
+      ulp_path = strsub(argv[0], 0, posb + 1);
+   }
+
+  
+
+   script_change = filesetext(L.name, "~~~.scr");
+
+   output(script_change, "wtD") {
+      
+      int firstf = 1;
+      L.packages(P) {
+         printf("EDIT %s.PAC;\n", P.name);
+         if (firstf) {
+           printf("%s",grid);
+	   printf("DISPLAY NONE 1 16 17 21 22 51 52;\n"); 
+           firstf = 0;
+         }
+
+         DoPackage(P);
+      }
+	
+      printf("GRID DEFAULT;\n");
+      
+      firstf = 1;
+      L.symbols(P) {
+         printf("EDIT %s.SYM;\n", P.name);
+         if (firstf) {
+           printf("%s",grid);
+	   printf("DISPLAY NONE 93 94 95 96;\n");
+           firstf = 0;
+         }
+
+         DoSymbol(P);
+      }
+ 
+      printf("GRID DEFAULT;\n");
+
+  }
+   }
+  exit ("SCRIPT '" + script_change + "';\n"); // REMOVE " + script_change + ";\n");
+
+} else {
+   dlgMessageBox("\n*** Start this ULP in a Library ***\n");
+   exit (0);
+}
