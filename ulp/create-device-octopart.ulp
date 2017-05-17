@@ -1,0 +1,15 @@
+#usage 	"<b>Calls a python script to add a part to the database</b>\nUses Octopart API to get device information"
+       	"<author>Author: kbdavid15@gmail.com</author>"
+
+string ulp_path = "";
+string script_change = "";
+
+int Result = 0;
+
+if (library) {
+	system("python -i ../python/octopart-add/octopart-add/octopart_add.py");
+
+} else {
+   dlgMessageBox("\n*** Start this ULP in a Library ***\n");
+   exit (0);
+}
