@@ -152,3 +152,6 @@ ENV/
 #api keys
 key.txt
 python/octopart-add/octopart-add/output.csv
+
+#pycharm project settings
+.idea/

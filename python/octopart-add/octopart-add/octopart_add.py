@@ -6,6 +6,7 @@ import codecs
 MAX_QUERIES_PER_REQUEST = 20
 OCTOPART_API_KEY = ''
 
+
 class Part():
     def __init__(self, part_match_result):
         self.part_match_result = part_match_result
@@ -28,6 +29,7 @@ def chunks(l, n):
     for i in range(0, len(l), n):
         yield l[i:i + n]
 
+
 def get_api_key():
     global OCTOPART_API_KEY
     if OCTOPART_API_KEY == '':
@@ -35,6 +37,7 @@ def get_api_key():
             content = f.readlines()
         OCTOPART_API_KEY = content[0]
     return OCTOPART_API_KEY
+
 
 def request_handle_timeout(url, params):
     retry_count = 0
@@ -47,9 +50,10 @@ def request_handle_timeout(url, params):
         retry_count += 1
     return r
 
+
 def get_specs_from_octopart(mpn_list):
-    "Takes a list of mpn strings, and gets the specs from octopart. Returns dict of information"
-    match_url = 'http://octopart.com/api/v3/parts/match?'
+    """Takes a list of mpn strings, and gets the specs from octopart. Returns dict of information"""
+    match_url = "http://octopart.com/api/v3/parts/match?"
     results = []
     idx = 1
     for chunk in chunks(mpn_list, MAX_QUERIES_PER_REQUEST):
@@ -74,6 +78,7 @@ def get_specs_from_octopart(mpn_list):
     print("API requests complete")
     parts = [Part(p) for p in results]
     return parts
+
 
 def output_parts_list(parts_list, out_file = "output.csv"):
     # get list of all possible keys
