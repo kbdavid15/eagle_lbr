@@ -1,0 +1,95 @@
+
+#include "json.inc"
+
+string apiKey = "0c9d5f73";
+
+string chrrep(string str,char a,char b){
+	for(int i = 0;i<strlen(str);i++){
+		if(str[i]==a){
+			str[i] = b;
+		}
+	}
+	return(str);
+}
+
+string octopartSearch(string mpn) {
+	string match_url = "http://octopart.com/api/v3/parts/match?";
+	string query = "queries=[{\"mpn\": \"" + mpn + "\"}]";
+	query += "&apikey=" + apiKey;
+	query += "&include[]=specs";
+	return(query);
+}
+
+void main(void){
+	string json_data;
+	int idx;
+	int array_idx;
+	int idx2;
+	string strResult;
+	string key;
+	string mpn_search;
+	string search_result;
+
+	// fileread(json_data,filedir(argv[0]) + "json_test_data.txt");
+
+	dlgDialog("JSON Tester"){
+		dlgVBoxLayout{
+			dlgHBoxLayout {
+				dlgLabel("Enter part to search Octopart");
+				dlgStringEdit(mpn_search);
+				dlgPushButton("Search") {
+					search_result = octopartSearch(mpn_search);
+				}
+			}
+			dlgHBoxLayout{
+				dlgVBoxLayout{
+					dlgLabel("json_data=");
+					dlgTextView(search_result);
+				}
+				dlgVBoxLayout{
+
+					dlgPushButton("json_GetKeyList(json_data)"){
+						strResult = chrrep(json_GetKeyList(json_data),'\t','\n');
+					};
+
+					dlgPushButton("json_GetArrayCount(json_data)"){
+						sprintf(strResult,"%d",json_GetArrayCount(json_data));
+					};
+
+					dlgStretch(1);
+					dlgLabel("key=");
+					dlgStringEdit(key);
+					dlgPushButton("json_GetKeyItem(json_data,key)"){
+						strResult = json_GetKeyItem(json_data,key);
+					};
+
+					dlgStretch(1);
+					dlgLabel("array_idx=");
+					dlgIntEdit(array_idx);
+					dlgPushButton("json_GetArrayItem(json_data,array_idx)"){
+						strResult = json_GetArrayItem(json_data,array_idx);
+					};
+
+					dlgStretch(1);
+					dlgPushButton("<-- Copy ---"){
+						json_data = strResult;
+						strResult = "";
+					};
+					dlgStretch(1);
+					dlgPushButton("Reset"){
+						fileread(json_data,filedir(argv[0]) + "data.txt");
+						strResult = "";
+					};
+				}
+				dlgVBoxLayout{
+					dlgLabel("Result=");
+					dlgTextView(strResult);
+
+				}
+			}
+		}
+
+
+	};
+
+}

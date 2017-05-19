@@ -1,0 +1,693 @@
+{ "request": {
+        "lines": [
+            {
+                "limit": 3,
+                "manufacturer": null,
+                "mpn": null,
+                "mpn_or_sku": null,
+                "q": "",
+                "reference": null,
+                "sku": "296-13098-1-ND",
+                "start": 0,
+                "supplier": null
+            },
+            {
+                "limit": 3,
+                "manufacturer": null,
+                "mpn": null,
+                "mpn_or_sku": null,
+                "q": "",
+                "reference": null,
+                "sku": "828-1005-1-ND",
+                "start": 0,
+                "supplier": null
+            }
+        ]
+    },
+    "results": [
+        {
+            "hits": 1,
+            "items": [
+                {
+                    "__class__": "Part",
+                    "avg_price": [
+                        0.94333333333333336,
+                        "USD"
+                    ],
+                    "category_ids": [
+                        5456,
+                        5414,
+                        4215
+                    ],
+                    "datasheets": [
+                        {
+                            "score": 2,
+                            "url": "http://datasheet.octopart.com/MAX3232IDR-Texas-Instruments-datasheet-10254354.pdf"
+                        },
+                        {
+                            "score": 1,
+                            "url": "http://datasheet.octopart.com/MAX3232IDR-Texas-Instruments-datasheet-5793.pdf"
+                        },
+                        {
+                            "score": 1,
+                            "url": "http://datasheet.octopart.com/MAX3232IDR-Texas-Instruments-datasheet-153559.pdf"
+                        }
+                    ],
+                    "detail_url": "http://octopart.com/max3232idr-texas+instruments-501275",
+                    "hyperlinks": {
+                        "freesample": "http://octopart-clicks.com/click/hltrack?hlid=1509462",
+                        "manufacturer": "http://octopart-clicks.com/click/hltrack?hlid=1509461"
+                    },
+                    "images": [
+                        {
+                            "credit_domain": "digikey.com",
+                            "credit_url": "http://octopart-clicks.com/click/vptrack?vpid=1783981",
+                            "url": "http://sigma.octopart.com/8893126/image/Texas-Instruments-MAX3232IDR.jpg",
+                            "url_30px": "http://sigma.octopart.com/8893127/image/Texas-Instruments-MAX3232IDR.jpg",
+                            "url_35px": "http://sigma.octopart.com/8893128/image/Texas-Instruments-MAX3232IDR.jpg",
+                            "url_55px": "http://sigma.octopart.com/8893129/image/Texas-Instruments-MAX3232IDR.jpg",
+                            "url_90px": "http://sigma.octopart.com/8893130/image/Texas-Instruments-MAX3232IDR.jpg"
+                        },
+                        {
+                            "credit_domain": "digikey.com",
+                            "credit_url": "http://octopart-clicks.com/click/vptrack?vpid=1783981",
+                            "url": "http://sigma.octopart.com/9542289/image/Texas-Instruments-MAX3232IDR.jpg",
+                            "url_30px": "http://sigma.octopart.com/9542290/image/Texas-Instruments-MAX3232IDR.jpg",
+                            "url_35px": "http://sigma.octopart.com/9542291/image/Texas-Instruments-MAX3232IDR.jpg",
+                            "url_55px": "http://sigma.octopart.com/9542292/image/Texas-Instruments-MAX3232IDR.jpg",
+                            "url_90px": "http://sigma.octopart.com/9542293/image/Texas-Instruments-MAX3232IDR.jpg"
+                        }
+                    ],
+                    "manufacturer": {
+                        "__class__": "Brand",
+                        "displayname": "Texas Instruments",
+                        "homepage_url": "http://ti.com",
+                        "id": 370
+                    },
+                    "market_status": "WARNING: Small Volume Availability (1k+ pieces)",
+                    "mpn": "MAX3232IDR",
+                    "num_authsuppliers": 5,
+                    "num_suppliers": 12,
+                    "offers": [
+                        {
+                            "avail": 1860,
+                            "buynow_url": "http://octopart-clicks.com/click/vptrack?vpid=3224861",
+                            "clickthrough_url": "http://octopart-clicks.com/click/vptrack?vpid=3224861",
+                            "is_authorized": true,
+                            "is_brokered": false,
+                            "packaging": null,
+                            "prices": [
+                                [
+                                    1,
+                                    1.5,
+                                    "USD"
+                                ],
+                                [
+                                    25,
+                                    1.3999999999999999,
+                                    "USD"
+                                ],
+                                [
+                                    100,
+                                    1.28,
+                                    "USD"
+                                ],
+                                [
+                                    250,
+                                    1.2,
+                                    "USD"
+                                ],
+                                [
+                                    500,
+                                    1.1000000000000001,
+                                    "USD"
+                                ],
+                                [
+                                    1000,
+                                    1.03,
+                                    "USD"
+                                ]
+                            ],
+                            "sendrfq_url": null,
+                            "sku": "75C1007",
+                            "supplier": {
+                                "__class__": "Brand",
+                                "displayname": "Newark",
+                                "homepage_url": "http://www.newark.com",
+                                "id": 2402
+                            }
+                        },
+                        {
+                            "avail": 3832,
+                            "buynow_url": "http://octopart-clicks.com/click/vptrack?vpid=38932968",
+                            "clickthrough_url": "http://octopart-clicks.com/click/vptrack?vpid=38932968",
+                            "is_authorized": true,
+                            "is_brokered": false,
+                            "packaging": null,
+                            "prices": [
+                                [
+                                    1,
+                                    1.45,
+                                    "USD"
+                                ]
+                            ],
+                            "sendrfq_url": null,
+                            "sku": "595-MAX3232IDR",
+                            "supplier": {
+                                "__class__": "Brand",
+                                "displayname": "Mouser",
+                                "homepage_url": "http://www.mouser.com",
+                                "id": 2401
+                            }
+                        },
+                        {
+                            "avail": 786,
+                            "buynow_url": "http://octopart-clicks.com/click/vptrack?vpid=29507676",
+                            "clickthrough_url": "http://octopart-clicks.com/click/vptrack?vpid=29507676",
+                            "is_authorized": true,
+                            "is_brokered": false,
+                            "packaging": null,
+                            "prices": [
+                                [
+                                    1,
+                                    1.1100000000000001,
+                                    "USD"
+                                ]
+                            ],
+                            "sendrfq_url": null,
+                            "sku": "MAX3232IDR/BKN",
+                            "supplier": {
+                                "__class__": "Brand",
+                                "displayname": "Avnet Express",
+                                "homepage_url": "http://avnetexpress.avnet.com",
+                                "id": 2628
+                            }
+                        },
+                        {
+                            "avail": 5066,
+                            "buynow_url": "http://octopart-clicks.com/click/vptrack?vpid=1783981",
+                            "clickthrough_url": "http://octopart-clicks.com/click/vptrack?vpid=1783981",
+                            "is_authorized": true,
+                            "is_brokered": false,
+                            "packaging": "Cut Tape",
+                            "prices": [
+                                [
+                                    1,
+                                    1.0900000000000001,
+                                    "USD"
+                                ],
+                                [
+                                    10,
+                                    0.90700000000000003,
+                                    "USD"
+                                ],
+                                [
+                                    25,
+                                    0.80600000000000005,
+                                    "USD"
+                                ],
+                                [
+                                    100,
+                                    0.54410000000000003,
+                                    "USD"
+                                ],
+                                [
+                                    250,
+                                    0.53395999999999999,
+                                    "USD"
+                                ],
+                                [
+                                    500,
+                                    0.52390000000000003,
+                                    "USD"
+                                ],
+                                [
+                                    750,
+                                    0.51383000000000001,
+                                    "USD"
+                                ]
+                            ],
+                            "sendrfq_url": null,
+                            "sku": "296-13098-1-ND",
+                            "supplier": {
+                                "__class__": "Brand",
+                                "displayname": "Digi-Key",
+                                "homepage_url": "http://www.digikey.com",
+                                "id": 459
+                            }
+                        },
+                        {
+                            "avail": 5066,
+                            "buynow_url": "http://octopart-clicks.com/click/vptrack?vpid=1701115",
+                            "clickthrough_url": "http://octopart-clicks.com/click/vptrack?vpid=1701115",
+                            "is_authorized": true,
+                            "is_brokered": false,
+                            "packaging": "Digi-Reel",
+                            "prices": [
+                                [
+                                    1,
+                                    1.0900000000000001,
+                                    "USD"
+                                ],
+                                [
+                                    10,
+                                    0.90700000000000003,
+                                    "USD"
+                                ],
+                                [
+                                    25,
+                                    0.80600000000000005,
+                                    "USD"
+                                ],
+                                [
+                                    100,
+                                    0.54410000000000003,
+                                    "USD"
+                                ],
+                                [
+                                    250,
+                                    0.53395999999999999,
+                                    "USD"
+                                ],
+                                [
+                                    500,
+                                    0.52390000000000003,
+                                    "USD"
+                                ],
+                                [
+                                    750,
+                                    0.51383000000000001,
+                                    "USD"
+                                ]
+                            ],
+                            "sendrfq_url": null,
+                            "sku": "296-13098-6-ND",
+                            "supplier": {
+                                "__class__": "Brand",
+                                "displayname": "Digi-Key",
+                                "homepage_url": "http://www.digikey.com",
+                                "id": 459
+                            }
+                        },
+                        {
+                            "avail": 0,
+                            "buynow_url": "http://octopart-clicks.com/click/vptrack?vpid=15167048",
+                            "clickthrough_url": "http://octopart-clicks.com/click/vptrack?vpid=15167048",
+                            "is_authorized": true,
+                            "is_brokered": false,
+                            "packaging": null,
+                            "prices": [
+                                [
+                                    1,
+                                    0.59999999999999998,
+                                    "USD"
+                                ]
+                            ],
+                            "sendrfq_url": null,
+                            "sku": "MAX3232IDR",
+                            "supplier": {
+                                "__class__": "Brand",
+                                "displayname": "Arrow",
+                                "homepage_url": "http://www.arrownac.com/",
+                                "id": 1106
+                            }
+                        },
+                        {
+                            "avail": 2500,
+                            "buynow_url": "http://octopart-clicks.com/click/vptrack?vpid=1234170",
+                            "clickthrough_url": "http://octopart-clicks.com/click/vptrack?vpid=1234170",
+                            "is_authorized": true,
+                            "is_brokered": false,
+                            "packaging": "Tape and Reel",
+                            "prices": [
+                                [
+                                    2500,
+                                    0.504,
+                                    "USD"
+                                ]
+                            ],
+                            "sendrfq_url": null,
+                            "sku": "296-13098-2-ND",
+                            "supplier": {
+                                "__class__": "Brand",
+                                "displayname": "Digi-Key",
+                                "homepage_url": "http://www.digikey.com",
+                                "id": 459
+                            }
+                        }
+                    ],
+                    "refer_id": null,
+                    "short_description": "3-V to 5.5-V Multichannel RS-232 Line Driver/Receiver 16-SOIC -40 to 85",
+                    "specs": [
+                        {
+                            "attribute": {
+                                "__class__": "PartAttribute",
+                                "displayname": "Data Rate",
+                                "fieldname": "data_rate",
+                                "metadata": {
+                                    "datatype": "float",
+                                    "unit": {
+                                        "name": "bps",
+                                        "symbol": "bps"
+                                    }
+                                },
+                                "type": "number"
+                            },
+                            "values": [
+                                {
+                                    "uncertainty_minus": null,
+                                    "uncertainty_plus": null,
+                                    "value": 250000.0
+                                }
+                            ]
+                        },
+                        {
+                            "attribute": {
+                                "__class__": "PartAttribute",
+                                "displayname": "Number of Pins",
+                                "fieldname": "number_of_pins",
+                                "metadata": {
+                                    "datatype": "integer",
+                                    "unit": null
+                                },
+                                "type": "number"
+                            },
+                            "values": [
+                                16
+                            ]
+                        },
+                        {
+                            "attribute": {
+                                "__class__": "PartAttribute",
+                                "displayname": "Supply Voltage (DC)",
+                                "fieldname": "supply_voltage_dc",
+                                "metadata": {
+                                    "datatype": "float",
+                                    "unit": {
+                                        "name": "V",
+                                        "symbol": "V"
+                                    }
+                                },
+                                "type": "number"
+                            },
+                            "values": [
+                                {
+                                    "uncertainty_minus": null,
+                                    "uncertainty_plus": null,
+                                    "value": 3.2999999999999998
+                                },
+                                {
+                                    "uncertainty_minus": null,
+                                    "uncertainty_plus": null,
+                                    "value": 5.0
+                                }
+                            ]
+                        },
+                        {
+                            "attribute": {
+                                "__class__": "PartAttribute",
+                                "displayname": "Lead-Free Status",
+                                "fieldname": "lead_free_status",
+                                "metadata": null,
+                                "type": "text"
+                            },
+                            "values": [
+                                "Lead Free"
+                            ]
+                        },
+                        {
+                            "attribute": {
+                                "__class__": "PartAttribute",
+                                "displayname": "Packaging",
+                                "fieldname": "packaging",
+                                "metadata": null,
+                                "type": "text"
+                            },
+                            "values": [
+                                "Reel"
+                            ]
+                        },
+                        {
+                            "attribute": {
+                                "__class__": "PartAttribute",
+                                "displayname": "Case / Package / Footprint",
+                                "fieldname": "case_package",
+                                "metadata": null,
+                                "type": "text"
+                            },
+                            "values": [
+                                "SOIC-16"
+                            ]
+                        },
+                        {
+                            "attribute": {
+                                "__class__": "PartAttribute",
+                                "displayname": "Drivers Per Package",
+                                "fieldname": "drivers_per_package",
+                                "metadata": {
+                                    "datatype": "integer",
+                                    "unit": null
+                                },
+                                "type": "number"
+                            },
+                            "values": [
+                                2
+                            ]
+                        },
+                        {
+                            "attribute": {
+                                "__class__": "PartAttribute",
+                                "displayname": "Supply Current",
+                                "fieldname": "supply_current",
+                                "metadata": {
+                                    "datatype": "float",
+                                    "unit": {
+                                        "name": "A",
+                                        "symbol": "A"
+                                    }
+                                },
+                                "type": "number"
+                            },
+                            "values": [
+                                {
+                                    "uncertainty_minus": null,
+                                    "uncertainty_plus": null,
+                                    "value": 0.00029999999999999997
+                                }
+                            ]
+                        },
+                        {
+                            "attribute": {
+                                "__class__": "PartAttribute",
+                                "displayname": "Lifecycle Status",
+                                "fieldname": "lifecycle_status",
+                                "metadata": null,
+                                "type": "text"
+                            },
+                            "values": [
+                                "Active"
+                            ]
+                        },
+                        {
+                            "attribute": {
+                                "__class__": "PartAttribute",
+                                "displayname": "Mounting Type",
+                                "fieldname": "mounting_type",
+                                "metadata": null,
+                                "type": "text"
+                            },
+                            "values": [
+                                "Surface Mount"
+                            ]
+                        },
+                        {
+                            "attribute": {
+                                "__class__": "PartAttribute",
+                                "displayname": "RoHS",
+                                "fieldname": "rohs",
+                                "metadata": null,
+                                "type": "text"
+                            },
+                            "values": [
+                                "Compliant"
+                            ]
+                        }
+                    ],
+                    "uid": 50127504212
+                }
+            ],
+            "reference": null,
+            "status": null
+        },
+        {
+            "hits": 1,
+            "items": [
+                {
+                    "__class__": "Part",
+                    "avg_price": [
+                        6.8250000000000002,
+                        "USD"
+                    ],
+                    "category_ids": [],
+                    "datasheets": [],
+                    "detail_url": "http://octopart.com/bmp085-bosch-19008965",
+                    "hyperlinks": {},
+                    "images": [
+                        {
+                            "credit_domain": "digikey.com",
+                            "credit_url": "http://octopart-clicks.com/click/vptrack?vpid=40820859",
+                            "url": "http://sigma.octopart.com/8911268/image/Bosch-BMP085.jpg",
+                            "url_30px": "http://sigma.octopart.com/8911269/image/Bosch-BMP085.jpg",
+                            "url_35px": "http://sigma.octopart.com/8911270/image/Bosch-BMP085.jpg",
+                            "url_55px": "http://sigma.octopart.com/8911271/image/Bosch-BMP085.jpg",
+                            "url_90px": "http://sigma.octopart.com/8911272/image/Bosch-BMP085.jpg"
+                        }
+                    ],
+                    "manufacturer": {
+                        "__class__": "Brand",
+                        "displayname": "Bosch",
+                        "homepage_url": null,
+                        "id": 1139
+                    },
+                    "market_status": "GOOD: Large Volume Availability (10k+ pieces)",
+                    "mpn": "BMP085",
+                    "num_authsuppliers": 1,
+                    "num_suppliers": 3,
+                    "offers": [
+                        {
+                            "avail": 18807,
+                            "buynow_url": "http://octopart-clicks.com/click/vptrack?vpid=40820859",
+                            "clickthrough_url": "http://octopart-clicks.com/click/vptrack?vpid=40820859",
+                            "is_authorized": true,
+                            "is_brokered": false,
+                            "packaging": "Cut Tape",
+                            "prices": [
+                                [
+                                    1,
+                                    8.1899999999999995,
+                                    "USD"
+                                ],
+                                [
+                                    10,
+                                    6.8250000000000002,
+                                    "USD"
+                                ],
+                                [
+                                    100,
+                                    5.7329999999999997,
+                                    "USD"
+                                ],
+                                [
+                                    250,
+                                    5.1870000000000003,
+                                    "USD"
+                                ],
+                                [
+                                    500,
+                                    4.7774999999999999,
+                                    "USD"
+                                ],
+                                [
+                                    1000,
+                                    4.3680000000000003,
+                                    "USD"
+                                ]
+                            ],
+                            "sendrfq_url": null,
+                            "sku": "828-1005-1-ND",
+                            "supplier": {
+                                "__class__": "Brand",
+                                "displayname": "Digi-Key",
+                                "homepage_url": "http://www.digikey.com",
+                                "id": 459
+                            }
+                        },
+                        {
+                            "avail": 18807,
+                            "buynow_url": "http://octopart-clicks.com/click/vptrack?vpid=40820860",
+                            "clickthrough_url": "http://octopart-clicks.com/click/vptrack?vpid=40820860",
+                            "is_authorized": true,
+                            "is_brokered": false,
+                            "packaging": "Digi-Reel",
+                            "prices": [
+                                [
+                                    1,
+                                    8.1899999999999995,
+                                    "USD"
+                                ],
+                                [
+                                    10,
+                                    6.8250000000000002,
+                                    "USD"
+                                ],
+                                [
+                                    100,
+                                    5.7329999999999997,
+                                    "USD"
+                                ],
+                                [
+                                    250,
+                                    5.1870000000000003,
+                                    "USD"
+                                ],
+                                [
+                                    500,
+                                    4.7774999999999999,
+                                    "USD"
+                                ],
+                                [
+                                    1000,
+                                    4.3680000000000003,
+                                    "USD"
+                                ]
+                            ],
+                            "sendrfq_url": null,
+                            "sku": "828-1005-6-ND",
+                            "supplier": {
+                                "__class__": "Brand",
+                                "displayname": "Digi-Key",
+                                "homepage_url": "http://www.digikey.com",
+                                "id": 459
+                            }
+                        },
+                        {
+                            "avail": 18000,
+                            "buynow_url": "http://octopart-clicks.com/click/vptrack?vpid=34249627",
+                            "clickthrough_url": "http://octopart-clicks.com/click/vptrack?vpid=34249627",
+                            "is_authorized": true,
+                            "is_brokered": false,
+                            "packaging": "Tape and Reel",
+                            "prices": [
+                                [
+                                    3000,
+                                    3.9584999999999999,
+                                    "USD"
+                                ],
+                                [
+                                    6000,
+                                    3.8220000000000001,
+                                    "USD"
+                                ]
+                            ],
+                            "sendrfq_url": null,
+                            "sku": "828-1005-2-ND",
+                            "supplier": {
+                                "__class__": "Brand",
+                                "displayname": "Digi-Key",
+                                "homepage_url": "http://www.digikey.com",
+                                "id": 459
+                            }
+                        }
+                    ],
+                    "refer_id": null,
+                    "short_description": "Digital Barometric Pressure Snsr",
+                    "specs": [],
+                    "uid": 1900896524208
+                }
+            ],
+            "reference": null,
+            "status": null
+        }
+    ],
+    "time": 0.08025813102722168
+}
