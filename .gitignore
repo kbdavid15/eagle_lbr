@@ -155,3 +155,4 @@ python/octopart-add/octopart-add/output.csv
 
 #pycharm project settings
 .idea/
+*.sublime-workspace
