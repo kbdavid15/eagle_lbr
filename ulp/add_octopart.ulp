@@ -45,7 +45,18 @@ string process_octopart_result(string json_text) {
 	string manuf = json_GetKeyItem(manuf_obj, "name");
 
 	string ret_val = "manufacturer\t" + manuf + gs;
-	ret_val += "mpn\t" + mpn;
+	ret_val += "mpn\t" + mpn + gs;
+
+	// process specs
+	string speclist[];
+	strsplit(speclist, json_GetKeyList(specs), '\t');
+
+	for (int i = 0; speclist[i]; i++) {
+		string spec_obj = json_GetKeyItem(specs, speclist[i]);
+		string display_val = json_GetKeyItem(spec_obj, "display_value");
+		ret_val += speclist[i] + "\t" + display_val + gs;
+	}
+
 
 	return ret_val;
 }
