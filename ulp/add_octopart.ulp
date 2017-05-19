@@ -12,6 +12,16 @@ string chrrep(string str,char a,char b){
 	return(str);
 }
 
+string convertUnicodeToUtf8(string s) {
+	output("output.txt","at") {
+		printf("%s\n", s); 	
+		for (int i = 0; s[i]; ++i) {
+			printf("%x\n", s[i]);
+		}
+	}
+	return s;
+}
+
 string octopartSearch(string mpn) {
 	string match_url = "http://octopart.com/api/v3/parts/match?";
 	string query = "queries=[{\"mpn\": \"" + mpn + "\"}]";
@@ -54,7 +64,7 @@ string process_octopart_result(string json_text) {
 	for (int i = 0; speclist[i]; i++) {
 		string spec_obj = json_GetKeyItem(specs, speclist[i]);
 		string display_val = json_GetKeyItem(spec_obj, "display_value");
-		ret_val += speclist[i] + "\t" + display_val + gs;
+		ret_val += speclist[i] + "\t" + display_val + "\t" + convertUnicodeToUtf8(display_val) + gs;
 	}
 
 	return ret_val;
@@ -62,6 +72,28 @@ string process_octopart_result(string json_text) {
 
 void CreatePartWithAttributes() {
 
+}
+
+
+
+void ShowDialogAddToExistingDevice() {
+	// get device list
+	string devliststr = "";
+	string Devices[];
+	if (library) {
+		library(L) {
+			L.devices(D) {
+				devliststr += D.name + gs;
+			}
+			strsplit(Devices, devliststr, gs);
+		}
+	}
+	int selected_dev = 0;
+	dlgDialog("Select device to add attributes") {
+		dlgHBoxLayout {
+			dlgListBox(Devices, selected_dev);
+		}
+	};
 }
 
 void main(void){
@@ -73,11 +105,29 @@ void main(void){
 	string key;
 	string mpn_search = "RK73H1ET*3302F";
 	string attributes[];
-	string listHeader = "Name\tValue";
+	string packages[];
+	string symbols[];
+	string listHeader = "Name\tValue\tConverted";
 	int Selected = 0;
 	int selected_pkg = 0;
 	int selected_sym = 0;
 	string searchHistory[];
+
+	// check if being run in library
+	if (library) {
+		library(L) {
+			string pkgstr = "";
+			L.packages(P) {	// get packages and populate array
+				pkgstr += P.name + gs;
+			}
+			strsplit(packages, pkgstr, gs);
+			string symstr = "";
+			L.symbols(S) {	// get packages and populate array
+				symstr += S.name + gs;
+			}
+			strsplit(symbols, symstr, gs);
+		}
+	}
 
 	dlgDialog("Octopart API Attribute Data") {
 		dlgVBoxLayout {
@@ -90,28 +140,31 @@ void main(void){
 					string results = process_octopart_result(json_data);
 					strsplit(attributes, results, gs);
 				}
-				dlgSpacing(200);
+				// dlgSpacing(200);
 			}
 			dlgHBoxLayout {
-				dlgSpacing(750);	// defines the width of the entire dialog
+				dlgSpacing(500);	// defines the width of the entire dialog
 			}
-			dlgHBoxLayout {				
-				dlgVBoxLayout {
+			dlgVBoxLayout {
 					dlgLabel("Part Attributes");
 					dlgListView(listHeader, attributes, Selected) dlgMessageBox("You have selected " + attributes[Selected]);
 				}
+			dlgHBoxLayout {				
+				
 				dlgVBoxLayout {
 					dlgLabel("Package");
-					dlgListView(listHeader, attributes, selected_pkg) dlgMessageBox("You have selected " + attributes[selected_pkg]);
+					dlgListBox(packages, selected_pkg) dlgMessageBox("You have selected " + packages[selected_pkg]);
 				}
 				dlgVBoxLayout {
 					dlgLabel("Symbol");
-					dlgListView(listHeader, attributes, selected_sym) dlgMessageBox("You have selected " + attributes[selected_sym]);
+					// dlgListView("Symbols", symbols, selected_sym) dlgMessageBox("You have selected " + symbols[selected_sym]);
+					dlgListBox(symbols, selected_sym) dlgMessageBox("You have selected " + symbols[selected_sym]);
 				}
 			}
 			dlgHBoxLayout {
 				dlgPushButton("Add attributes to existing part") {
-
+					dlgAccept();
+					ShowDialogAddToExistingDevice();
 				}
 				dlgPushButton("Create new part") {
 
@@ -120,3 +173,4 @@ void main(void){
 		}
 	};
 }
+
