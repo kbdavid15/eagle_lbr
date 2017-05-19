@@ -1,7 +1,7 @@
-
 #include "json.inc"
 
 string apiKey = "0c9d5f73";
+char gs = 29;
 
 string chrrep(string str,char a,char b){
 	for(int i = 0;i<strlen(str);i++){
@@ -17,8 +17,40 @@ string octopartSearch(string mpn) {
 	string query = "queries=[{\"mpn\": \"" + mpn + "\"}]";
 	query += "&apikey=" + apiKey;
 	query += "&include[]=specs";
-	return(query);
+
+	string Result;
+	if (netget(Result, match_url + query) >= 0) {
+		// process results
+		return(Result);
+	}
+	else {
+		dlgMessageBox(neterror());
+	}
+	return "";
 }
+
+string process_octopart_result(string json_text) {
+	string keylist = json_GetKeyList(json_text);
+	if (strstr(keylist, "results") < 0) {
+		dlgMessageBox("Incorrect result format:\n" + keylist);
+		return "Incorrect result format:\n" + keylist;
+	}
+	string results = json_GetKeyItem(json_text, "results");
+	string first_result = json_GetArrayItem(results, 0);	// get the first result items
+	string items = json_GetKeyItem(first_result, "items");
+	string first_item = json_GetArrayItem(items, 0);	//TODO: Show multiple items for selection
+	string specs = json_GetKeyItem(first_item, "specs");
+	string mpn = json_GetKeyItem(first_item, "mpn");
+	string manuf_obj = json_GetKeyItem(first_item, "manufacturer");
+	string manuf = json_GetKeyItem(manuf_obj, "name");
+
+	string ret_val = "manufacturer\t" + manuf + gs;
+	ret_val += "mpn\t" + mpn;
+
+	return ret_val;
+}
+
+
 
 void main(void){
 	string json_data;
@@ -28,23 +60,24 @@ void main(void){
 	string strResult;
 	string key;
 	string mpn_search;
-	string search_result;
+	string attributes[];
+	string listHeader = "Name\tValue";
 
-	// fileread(json_data,filedir(argv[0]) + "json_test_data.txt");
-
-	dlgDialog("JSON Tester"){
+	dlgDialog("JSON Tester") {
 		dlgVBoxLayout{
 			dlgHBoxLayout {
 				dlgLabel("Enter part to search Octopart");
 				dlgStringEdit(mpn_search);
 				dlgPushButton("Search") {
-					search_result = octopartSearch(mpn_search);
+					json_data = octopartSearch(mpn_search);
+					string results = process_octopart_result(json_data);
+					strsplit(attributes, results, gs);
 				}
 			}
 			dlgHBoxLayout{
 				dlgVBoxLayout{
 					dlgLabel("json_data=");
-					dlgTextView(search_result);
+					dlgTextView(json_data);
 				}
 				dlgVBoxLayout{
 
@@ -86,10 +119,13 @@ void main(void){
 					dlgTextView(strResult);
 
 				}
+				dlgVBoxLayout{
+					dlgLabel("Result=");
+					string Colors[] = { "red\tThe color RED", "green\tThe color GREEN", "blue\tThe color BLUE" };
+					int Selected = 0; // initially selects "red"
+					dlgListView(listHeader, attributes, Selected) dlgMessageBox("You have selected " + attributes[Selected]);
+				}
 			}
 		}
-
-
 	};
-
 }
