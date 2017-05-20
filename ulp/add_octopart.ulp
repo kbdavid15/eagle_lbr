@@ -2,6 +2,7 @@
 
 string apiKey = "0c9d5f73";
 char gs = 29;
+string unicode_regex = "\\u[0-9a-fA-F]{4}";
 
 string chrrep(string str,char a,char b){
 	for(int i = 0;i<strlen(str);i++){
@@ -12,14 +13,39 @@ string chrrep(string str,char a,char b){
 	return(str);
 }
 
+// Unicode is always in format \u0000 (6 characters long)
 string convertUnicodeToUtf8(string s) {
-	output("output.txt","at") {
-		printf("%s\n", s); 	
-		for (int i = 0; s[i]; ++i) {
-			printf("%x\n", s[i]);
+	string newString = "";
+
+	if (strstr(s, "\\u") == -1) {
+		// not a unicode string
+		return s;
+	}
+	// assumes only one unicode character per string
+	int pos = strxstr(s, unicode_regex)-1;
+	string code = strsub(s, pos + 2, 4);
+	char replace;
+
+	if (code == "00b5") {
+		replace = 'µ';
+	} else if (code == "03a9") {
+		// replace = '';
+	} else if (code == "00b0") {
+		replace = '°';
+	} else if (code == "00b1") {
+		// replace = '';
+	}
+
+	for (int i = 0; i < strlen(s); i++) {
+		// look for 6 character unicode match
+		if (i < pos || i >= pos + 6) {
+			newString += s[i];
+		} else {
+			newString += replace;
+			i += 5;
 		}
 	}
-	return s;
+	return newString;
 }
 
 string octopartSearch(string mpn) {
@@ -64,7 +90,7 @@ string process_octopart_result(string json_text) {
 	for (int i = 0; speclist[i]; i++) {
 		string spec_obj = json_GetKeyItem(specs, speclist[i]);
 		string display_val = json_GetKeyItem(spec_obj, "display_value");
-		ret_val += speclist[i] + "\t" + display_val + "\t" + convertUnicodeToUtf8(display_val) + gs;
+		ret_val += speclist[i] + "\t" + convertUnicodeToUtf8(display_val) + gs;
 	}
 
 	return ret_val;
@@ -107,7 +133,7 @@ void main(void){
 	string attributes[];
 	string packages[];
 	string symbols[];
-	string listHeader = "Name\tValue\tConverted";
+	string listHeader = "Name\tValue";
 	int Selected = 0;
 	int selected_pkg = 0;
 	int selected_sym = 0;
@@ -149,8 +175,8 @@ void main(void){
 					dlgLabel("Part Attributes");
 					dlgListView(listHeader, attributes, Selected) dlgMessageBox("You have selected " + attributes[Selected]);
 				}
-			dlgHBoxLayout {				
-				
+			dlgHBoxLayout {
+
 				dlgVBoxLayout {
 					dlgLabel("Package");
 					dlgListBox(packages, selected_pkg) dlgMessageBox("You have selected " + packages[selected_pkg]);
@@ -173,4 +199,3 @@ void main(void){
 		}
 	};
 }
-
