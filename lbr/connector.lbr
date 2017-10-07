@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.2.1">
+<eagle version="8.3.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -230,6 +231,35 @@ Don't use yet, not ready. Not aligned to grid/outline is not valid</description>
 <smd name="MNT1" x="-7.04" y="-2.6" dx="2.2" dy="2" layer="1" rot="R90"/>
 <smd name="MNT2" x="7.71" y="-2.6" dx="2.2" dy="2" layer="1" rot="R90"/>
 </package>
+<package name="156815-1">
+<smd name="6" x="1.27" y="2.75" dx="5.5" dy="1.2" layer="1" rot="R90"/>
+<smd name="7" x="3.81" y="2.75" dx="5.5" dy="1.2" layer="1" rot="R90"/>
+<smd name="8" x="6.35" y="2.75" dx="5.5" dy="1.2" layer="1" rot="R90"/>
+<smd name="9" x="8.89" y="2.75" dx="5.5" dy="1.2" layer="1" rot="R90"/>
+<smd name="10" x="11.43" y="2.75" dx="5.5" dy="1.2" layer="1" rot="R90"/>
+<smd name="5" x="-1.27" y="2.75" dx="5.5" dy="1.2" layer="1" rot="R90"/>
+<smd name="4" x="-3.81" y="2.75" dx="5.5" dy="1.2" layer="1" rot="R90"/>
+<smd name="3" x="-6.35" y="2.75" dx="5.5" dy="1.2" layer="1" rot="R90"/>
+<smd name="2" x="-8.89" y="2.75" dx="5.5" dy="1.2" layer="1" rot="R90"/>
+<smd name="1" x="-11.43" y="2.75" dx="5.5" dy="1.2" layer="1" rot="R90"/>
+<hole x="-7.62" y="-8.4" drill="3.4"/>
+<hole x="7.62" y="-8.4" drill="3.4"/>
+<wire x1="-14.45" y1="-22.1" x2="14.45" y2="-22.1" width="0.127" layer="51"/>
+<wire x1="14.45" y1="-22.1" x2="14.45" y2="-1.6" width="0.127" layer="51"/>
+<wire x1="14.45" y1="-1.6" x2="-14.45" y2="-1.6" width="0.127" layer="51"/>
+<wire x1="-14.45" y1="-1.6" x2="-14.45" y2="-22.1" width="0.127" layer="51"/>
+<rectangle x1="-11.75" y1="-1.6" x2="-11.11" y2="4.9" layer="51"/>
+<rectangle x1="-9.21" y1="-1.6" x2="-8.57" y2="4.9" layer="51"/>
+<rectangle x1="-6.67" y1="-1.6" x2="-6.03" y2="4.9" layer="51"/>
+<rectangle x1="-4.13" y1="-1.6" x2="-3.49" y2="4.9" layer="51"/>
+<rectangle x1="-1.59" y1="-1.6" x2="-0.95" y2="4.9" layer="51"/>
+<rectangle x1="0.95" y1="-1.6" x2="1.59" y2="4.9" layer="51"/>
+<rectangle x1="3.49" y1="-1.6" x2="4.13" y2="4.9" layer="51"/>
+<rectangle x1="6.03" y1="-1.6" x2="6.67" y2="4.9" layer="51"/>
+<rectangle x1="8.57" y1="-1.6" x2="9.21" y2="4.9" layer="51"/>
+<rectangle x1="11.11" y1="-1.6" x2="11.75" y2="4.9" layer="51"/>
+<text x="-14.605" y="-20.32" size="1.27" layer="21" rot="R90">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="PLOGIC_GATE_CON">
@@ -317,6 +347,24 @@ Don't use yet, not ready. Not aligned to grid/outline is not valid</description>
 <text x="2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="MNT@1" x="15.24" y="-40.64" length="short" direction="pwr" rot="R180"/>
 <pin name="MNT@2" x="15.24" y="-43.18" length="short" direction="pwr" rot="R180"/>
+</symbol>
+<symbol name="156815-1">
+<wire x1="-7.62" y1="15.24" x2="7.62" y2="15.24" width="0.254" layer="94"/>
+<wire x1="7.62" y1="15.24" x2="7.62" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-12.7" x2="-7.62" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-12.7" x2="-7.62" y2="15.24" width="0.254" layer="94"/>
+<pin name="GND" x="-12.7" y="12.7" length="middle"/>
+<pin name="LVDS_HIGH" x="-12.7" y="10.16" length="middle"/>
+<pin name="VBATT" x="-12.7" y="7.62" length="middle"/>
+<pin name="LDW_LED" x="-12.7" y="5.08" length="middle"/>
+<pin name="CANH" x="-12.7" y="2.54" length="middle"/>
+<pin name="CANL" x="-12.7" y="0" length="middle"/>
+<pin name="SWCAN_GM" x="-12.7" y="-2.54" length="middle"/>
+<pin name="LVDS_LOW" x="-12.7" y="-5.08" length="middle"/>
+<pin name="COMM_ENB" x="-12.7" y="-7.62" length="middle"/>
+<pin name="ON_OFF_C" x="-12.7" y="-10.16" length="middle"/>
+<text x="-7.62" y="15.24" size="1.778" layer="95">&gt;NAME</text>
+<text x="-7.62" y="-15.24" size="1.778" layer="97">&gt;MPN</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -460,6 +508,30 @@ Don't use yet, not ready. Not aligned to grid/outline is not valid</description>
 <connect gate="G$1" pin="VGH@1" pad="14"/>
 <connect gate="G$1" pin="VGL" pad="16"/>
 <connect gate="G$1" pin="VGL@1" pad="17"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="156815-1">
+<gates>
+<gate name="G$1" symbol="156815-1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="156815-1">
+<connects>
+<connect gate="G$1" pin="CANH" pad="5"/>
+<connect gate="G$1" pin="CANL" pad="6"/>
+<connect gate="G$1" pin="COMM_ENB" pad="9"/>
+<connect gate="G$1" pin="GND" pad="1"/>
+<connect gate="G$1" pin="LDW_LED" pad="4"/>
+<connect gate="G$1" pin="LVDS_HIGH" pad="2"/>
+<connect gate="G$1" pin="LVDS_LOW" pad="8"/>
+<connect gate="G$1" pin="ON_OFF_C" pad="10"/>
+<connect gate="G$1" pin="SWCAN_GM" pad="7"/>
+<connect gate="G$1" pin="VBATT" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
