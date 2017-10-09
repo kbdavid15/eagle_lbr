@@ -5535,36 +5535,36 @@ Seq:3</text>
 <pin name="PA01" x="-15.24" y="17.78" length="short"/>
 <pin name="PA02" x="-15.24" y="15.24" length="short"/>
 <pin name="PA03" x="-15.24" y="12.7" length="short"/>
-<pin name="PB08" x="-15.24" y="10.16" length="short"/>
-<pin name="PB09" x="-15.24" y="7.62" length="short"/>
-<pin name="PA04" x="-15.24" y="5.08" length="short"/>
-<pin name="PA05" x="-15.24" y="2.54" length="short"/>
-<pin name="PA06" x="-15.24" y="0" length="short"/>
-<pin name="PA07" x="-15.24" y="-2.54" length="short"/>
-<pin name="PA08" x="-15.24" y="-5.08" length="short"/>
-<pin name="PA09" x="-15.24" y="-7.62" length="short"/>
-<pin name="PA10" x="-15.24" y="-10.16" length="short"/>
-<pin name="PA11" x="-15.24" y="-12.7" length="short"/>
-<pin name="PB10" x="-15.24" y="-15.24" length="short"/>
-<pin name="PB11" x="-15.24" y="-17.78" length="short"/>
-<pin name="PA12" x="-15.24" y="-20.32" length="short"/>
-<pin name="PA13" x="15.24" y="-20.32" length="short" rot="R180"/>
-<pin name="PA16" x="15.24" y="-17.78" length="short" rot="R180"/>
-<pin name="PA17" x="15.24" y="-15.24" length="short" rot="R180"/>
-<pin name="PA18" x="15.24" y="-12.7" length="short" rot="R180"/>
-<pin name="PA19" x="15.24" y="-10.16" length="short" rot="R180"/>
-<pin name="PA20" x="15.24" y="-7.62" length="short" rot="R180"/>
-<pin name="PA21" x="15.24" y="-5.08" length="short" rot="R180"/>
-<pin name="PA22" x="15.24" y="-2.54" length="short" rot="R180"/>
-<pin name="PA23" x="15.24" y="0" length="short" rot="R180"/>
-<pin name="PA24" x="15.24" y="2.54" length="short" rot="R180"/>
-<pin name="PA25" x="15.24" y="5.08" length="short" rot="R180"/>
-<pin name="PB22" x="15.24" y="7.62" length="short" rot="R180"/>
-<pin name="PB23" x="15.24" y="10.16" length="short" rot="R180"/>
-<pin name="PA27" x="15.24" y="12.7" length="short" rot="R180"/>
-<pin name="PA28" x="15.24" y="15.24" length="short" rot="R180"/>
-<pin name="PB02" x="15.24" y="17.78" length="short" rot="R180"/>
-<pin name="PB03" x="15.24" y="20.32" length="short" rot="R180"/>
+<pin name="PB08" x="15.24" y="-10.16" length="short" rot="R180"/>
+<pin name="PB09" x="15.24" y="-12.7" length="short" rot="R180"/>
+<pin name="PA04" x="-15.24" y="10.16" length="short"/>
+<pin name="PA05" x="-15.24" y="7.62" length="short"/>
+<pin name="PA06" x="-15.24" y="5.08" length="short"/>
+<pin name="PA07" x="-15.24" y="2.54" length="short"/>
+<pin name="PA08" x="-15.24" y="0" length="short"/>
+<pin name="PA09" x="-15.24" y="-2.54" length="short"/>
+<pin name="PA10" x="-15.24" y="-5.08" length="short"/>
+<pin name="PA11" x="-15.24" y="-7.62" length="short"/>
+<pin name="PB10" x="15.24" y="-15.24" length="short" rot="R180"/>
+<pin name="PB11" x="15.24" y="-17.78" length="short" rot="R180"/>
+<pin name="PA12" x="-15.24" y="-10.16" length="short"/>
+<pin name="PA13" x="-15.24" y="-12.7" length="short"/>
+<pin name="PA16" x="-15.24" y="-15.24" length="short"/>
+<pin name="PA17" x="-15.24" y="-17.78" length="short"/>
+<pin name="PA18" x="-15.24" y="-20.32" length="short"/>
+<pin name="PA19" x="15.24" y="22.86" length="short" rot="R180"/>
+<pin name="PA20" x="15.24" y="20.32" length="short" rot="R180"/>
+<pin name="PA21" x="15.24" y="17.78" length="short" rot="R180"/>
+<pin name="PA22" x="15.24" y="15.24" length="short" rot="R180"/>
+<pin name="PA23" x="15.24" y="12.7" length="short" rot="R180"/>
+<pin name="PA24" x="15.24" y="10.16" length="short" rot="R180"/>
+<pin name="PA25" x="15.24" y="7.62" length="short" rot="R180"/>
+<pin name="PB22" x="15.24" y="-20.32" length="short" rot="R180"/>
+<pin name="PB23" x="15.24" y="-22.86" length="short" rot="R180"/>
+<pin name="PA27" x="15.24" y="2.54" length="short" rot="R180"/>
+<pin name="PA28" x="15.24" y="5.08" length="short" rot="R180"/>
+<pin name="PB02" x="15.24" y="-5.08" length="short" rot="R180"/>
+<pin name="PB03" x="15.24" y="-7.62" length="short" rot="R180"/>
 <wire x1="-12.7" y1="-25.4" x2="12.7" y2="-25.4" width="0.254" layer="94"/>
 <wire x1="12.7" y1="-25.4" x2="12.7" y2="25.4" width="0.254" layer="94"/>
 <wire x1="12.7" y1="25.4" x2="-12.7" y2="25.4" width="0.254" layer="94"/>
