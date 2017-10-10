@@ -151,20 +151,20 @@ body 3.9 mm/JEDEC MS-012AC</description>
 </symbol>
 <symbol name="MC33897">
 <wire x1="-10.16" y1="12.7" x2="10.16" y2="12.7" width="0.254" layer="94"/>
-<wire x1="10.16" y1="12.7" x2="10.16" y2="-15.24" width="0.254" layer="94"/>
-<wire x1="10.16" y1="-15.24" x2="-10.16" y2="-15.24" width="0.254" layer="94"/>
-<wire x1="-10.16" y1="-15.24" x2="-10.16" y2="12.7" width="0.254" layer="94"/>
+<wire x1="10.16" y1="12.7" x2="10.16" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-12.7" x2="-10.16" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-12.7" x2="-10.16" y2="12.7" width="0.254" layer="94"/>
 <pin name="CNTL" x="-15.24" y="10.16" length="middle"/>
-<pin name="TXD" x="-15.24" y="2.54" length="middle"/>
-<pin name="RXD" x="-15.24" y="0" length="middle"/>
-<pin name="MODE0" x="-15.24" y="-5.08" length="middle"/>
-<pin name="MODE1" x="-15.24" y="-7.62" length="middle"/>
-<pin name="GND" x="-15.24" y="-12.7" length="middle"/>
+<pin name="TXD" x="-15.24" y="5.08" length="middle"/>
+<pin name="RXD" x="-15.24" y="2.54" length="middle"/>
+<pin name="MODE0" x="-15.24" y="-2.54" length="middle"/>
+<pin name="MODE1" x="-15.24" y="-5.08" length="middle"/>
+<pin name="GND" x="-15.24" y="-10.16" length="middle"/>
 <pin name="VBATT" x="15.24" y="10.16" length="middle" rot="R180"/>
-<pin name="BUS" x="15.24" y="2.54" length="middle" rot="R180"/>
-<pin name="LOAD" x="15.24" y="-2.54" length="middle" rot="R180"/>
+<pin name="BUS" x="15.24" y="0" length="middle" rot="R180"/>
+<pin name="LOAD" x="15.24" y="-10.16" length="middle" rot="R180"/>
 <text x="-10.16" y="12.7" size="1.778" layer="95">&gt;NAME</text>
-<text x="-10.16" y="-17.78" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-10.16" y="-15.24" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
