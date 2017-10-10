@@ -1,0 +1,61 @@
+int tStopLayer = 29;
+
+
+// void changesize(float newSize)
+// {
+// 	library(L) {
+// 		L.packages(PAC) {
+// 			printf("Package: %s\n", PAC.name);
+// 			PAC.contacts(C) {
+// 				if (C.pad)
+// 					printf("\tPad: %s, (%f %f)\n",
+// 					C.name, u2mm(C.pad.x), u2mm(C.pad.y));
+// 				else if (C.smd)
+// 					printf("\tSmd: %s, (%f %f)\n",
+// 					C.name, u2mm(C.smd.x), u2mm(C.smd.y));
+// 			}
+// 			PAC.circles(C) {
+// 				if (C.layer == tStopLayer) {
+// 					C.radius = newSize;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+void convertCircleToSMDStop()
+{
+	if (!package)
+	{
+		return;
+	}
+	output("output.txt","at") {
+		package(PAC) {
+			PAC.contacts(C) {
+				if (C.smd) {
+					// C.smd.flags = 0x07;
+					printf("ContactName: %s Name: %s Signal: %s Layer: %d ", C.name, C.smd.name, C.smd.signal, C.smd.layer);
+					printf("Flags: 0x%x\n", C.smd.flags);
+				}
+			}
+			PAC.circles(C) {
+				if (C.layer == tStopLayer) {
+					setgroup(C);
+				}
+			}
+		}
+	}
+	exit("DELETE");
+}
+
+
+void main(void) {
+	convertCircleToSMDStop();
+
+	// dlgDialog("Edit solder mask (tStop)") {
+	// 	dlgVBoxLayout {
+	// 		dlgLabel("Enter new size radius");
+	// 		dlg
+	// 	}
+	// };
+}
