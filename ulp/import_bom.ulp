@@ -230,6 +230,25 @@ string ReplaceTabs(string s)
 	return s;
 }
 
+void SplitPreserveQuotes(string splitStr, char separator)
+{
+	int start = 0;
+	int inQuotes = -1;	// false
+	for (int current = 0; splitStr[current]; current++) {
+		 if (splitStr[current] == '\"') {
+			 inQuotes *= -1; // toggle state
+		 }
+		 // boolean atLastChar = (current == input.length() - 1);
+		 // if(atLastChar) result.add(input.substring(start));
+		 // else if (input.charAt(current) == ',' && !inQuotes) {
+			  // result.add(input.substring(start, current));
+			  // start = current + 1;
+		 // }
+	}
+	
+}
+
+
 // Collect part data from the schematic.
 //
 // Arguments: -
@@ -250,17 +269,31 @@ void CollectPartData (string filePath)
 {
 	string lines[];
 	int nLines = fileread(lines, filePath);
-	  // First, collect the names of all available attributes.
-	NumParts = nLines;
-	for (int i = 0; i < nLines; ++i) {
+		// First, collect the names of all available attributes, found in header row. Attrib starts after col 5
+	string header[];
+	int n = strsplit(header, lines[0], ',');
+	FoundAttributes = 0;	
+	for (int i = 5; header[i]; i++) 
+	{
+		AttributesList[FoundAttributes] = header[i];
+		FoundAttributes ++;
+	}
+	sort (FoundAttributes, AttributesList);
+	
+	NumParts = 0;
+	for (i = 0; i < nLines; ++i) {
 		// split line by character separator
 		string col[];
 		int n = strsplit(col, lines[i], ',');
-		PartName[i] = col[0];
-		PartValue[i] = col[1];
-		PartDevice[i] = col[2];
-		PartPackage[i] = col[3];
-		PartHeadline[i] = col[4];
+		if (col[0] == "Part") {
+			continue;	// skip header, if present
+		}
+		PartName[NumParts] = col[0];
+		PartValue[NumParts] = col[1];
+		PartDevice[NumParts] = col[2];
+		PartPackage[NumParts] = col[3];
+		PartHeadline[NumParts] = col[4];
+		NumParts++;
 	}
 	
 }
@@ -446,6 +479,20 @@ void SaveList (void)
 			}
 		}
 	}
+}
+
+void UpdatePartAttributes()
+{
+	output("change-attr.scr", "wt")
+	{
+		schematic(SCH)
+		{
+			SCH.allparts (P)
+			{
+				printf("ATTRIBUTE '%s' '%s' '%s';\n", P.name, "", "");
+			}
+		}
+	}	
 }
 
 void main(void){
