@@ -752,12 +752,12 @@ Seq: 6</text>
 </device>
 </devices>
 </deviceset>
-<deviceset name="MCP16311/2">
+<deviceset name="MCP16312-E/*" prefix="U">
 <gates>
 <gate name="G$1" symbol="MCP16311/2" x="0" y="0"/>
 </gates>
 <devices>
-<device name="MNY" package="MSOP-8">
+<device name="MS" package="MSOP-8">
 <connects>
 <connect gate="G$1" pin="BOOST" pad="7"/>
 <connect gate="G$1" pin="EN" pad="3"/>
