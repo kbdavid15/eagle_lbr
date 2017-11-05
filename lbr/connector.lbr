@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -286,16 +286,28 @@ MANUFACTURER:SAMTEC.</description>
 <text x="-2.794" y="-4.826" size="0.762" layer="21">1</text>
 <text x="-2.794" y="4.064" size="0.762" layer="21">2</text>
 </package>
-<package name="USB-HEADER">
+<package name="USB-HEADER_SHIELD">
 <pad name="1" x="-3.81" y="0" drill="0.6" shape="square"/>
 <pad name="2" x="-1.27" y="0" drill="0.6" rot="R90"/>
 <pad name="3" x="1.27" y="0" drill="0.6" rot="R90"/>
 <pad name="4" x="3.81" y="0" drill="0.6" rot="R90"/>
-<smd name="5" x="0" y="-2.54" dx="3.81" dy="1.27" layer="1"/>
+<smd name="5" x="0" y="-1.524" dx="3.81" dy="1.27" layer="1"/>
 <wire x1="-5.08" y1="1.27" x2="5.08" y2="1.27" width="0.127" layer="39"/>
-<wire x1="5.08" y1="1.27" x2="5.08" y2="-3.81" width="0.127" layer="39"/>
-<wire x1="5.08" y1="-3.81" x2="-5.08" y2="-3.81" width="0.127" layer="39"/>
-<wire x1="-5.08" y1="-3.81" x2="-5.08" y2="1.27" width="0.127" layer="39"/>
+<wire x1="5.08" y1="1.27" x2="5.08" y2="-2.54" width="0.127" layer="39"/>
+<wire x1="5.08" y1="-2.54" x2="-5.08" y2="-2.54" width="0.127" layer="39"/>
+<wire x1="-5.08" y1="-2.54" x2="-5.08" y2="1.27" width="0.127" layer="39"/>
+</package>
+<package name="USB-HEADER">
+<pad name="1" x="0" y="0" drill="0.6" shape="square"/>
+<pad name="2" x="2.54" y="0" drill="0.6" rot="R90"/>
+<pad name="3" x="5.08" y="0" drill="0.6" rot="R90"/>
+<pad name="4" x="7.62" y="0" drill="0.6" rot="R90"/>
+<wire x1="-0.889" y1="0.889" x2="8.509" y2="0.889" width="0.127" layer="39"/>
+<wire x1="8.509" y1="0.889" x2="8.509" y2="-0.889" width="0.127" layer="39"/>
+<wire x1="8.509" y1="-0.889" x2="-0.889" y2="-0.889" width="0.127" layer="39"/>
+<wire x1="-0.889" y1="-0.889" x2="-0.889" y2="0.889" width="0.127" layer="39"/>
+<text x="-0.508" y="1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="-0.508" y="-2.286" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -441,16 +453,15 @@ MANUFACTURER:SAMTEC.</description>
 </symbol>
 <symbol name="USB2.0">
 <wire x1="-5.08" y1="10.16" x2="5.08" y2="10.16" width="0.254" layer="94"/>
-<wire x1="5.08" y1="10.16" x2="5.08" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-10.16" x2="-5.08" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="-10.16" x2="-5.08" y2="10.16" width="0.254" layer="94"/>
+<wire x1="5.08" y1="10.16" x2="5.08" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-7.62" x2="-5.08" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-7.62" x2="-5.08" y2="10.16" width="0.254" layer="94"/>
 <pin name="VCC" x="10.16" y="7.62" length="middle" rot="R180"/>
 <pin name="DM" x="10.16" y="2.54" length="middle" rot="R180"/>
 <pin name="DP" x="10.16" y="0" length="middle" rot="R180"/>
 <pin name="GND" x="10.16" y="-5.08" length="middle" rot="R180"/>
-<pin name="SHIELD" x="10.16" y="-7.62" length="middle" rot="R180"/>
 <text x="-5.08" y="10.16" size="1.778" layer="95">&gt;NAME</text>
-<text x="-5.08" y="-12.7" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-5.08" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -680,12 +691,22 @@ MANUFACTURER:SAMTEC.</description>
 <gate name="G$1" symbol="USB2.0" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="USB-HEADER">
+<device name="" package="USB-HEADER_SHIELD">
 <connects>
 <connect gate="G$1" pin="DM" pad="2"/>
 <connect gate="G$1" pin="DP" pad="3"/>
+<connect gate="G$1" pin="GND" pad="4 5"/>
+<connect gate="G$1" pin="VCC" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="US" package="USB-HEADER">
+<connects>
+<connect gate="G$1" pin="DM" pad="3"/>
+<connect gate="G$1" pin="DP" pad="2"/>
 <connect gate="G$1" pin="GND" pad="4"/>
-<connect gate="G$1" pin="SHIELD" pad="5"/>
 <connect gate="G$1" pin="VCC" pad="1"/>
 </connects>
 <technologies>
