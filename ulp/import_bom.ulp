@@ -230,22 +230,30 @@ string ReplaceTabs(string s)
 	return s;
 }
 
+string SplitResults[];
+int SplitResultLength = 0;
 void SplitPreserveQuotes(string splitStr, char separator)
 {
 	int start = 0;
 	int inQuotes = -1;	// false
-	for (int current = 0; splitStr[current]; current++) {
-		 if (splitStr[current] == '\"') {
-			 inQuotes *= -1; // toggle state
-		 }
-		 // boolean atLastChar = (current == input.length() - 1);
-		 // if(atLastChar) result.add(input.substring(start));
-		 // else if (input.charAt(current) == ',' && !inQuotes) {
-			  // result.add(input.substring(start, current));
-			  // start = current + 1;
-		 // }
+	int inputLength = strlen(splitStr);
+	int resultCnt = 0;
+	for (int i = 0; splitStr[i]; i++) 
+	{
+		if (splitStr[i] == '\"') {
+			inQuotes *= -1; // toggle state
+		}
+		if (i == (inputLength - 1))
+		{
+			SplitResults[resultCnt++] = strsub(splitStr, start);	// add rest of data
+		}
+		else if (splitStr[i] == separator && (inQuotes < 0))
+		{
+			SplitResults[resultCnt++] = strsub(splitStr, start, i-start);
+			start = i + 1;
+		}
 	}
-	
+	SplitResultLength = resultCnt;
 }
 
 
@@ -268,6 +276,7 @@ void SplitPreserveQuotes(string splitStr, char separator)
 void CollectPartData (string filePath)
 {
 	string lines[];
+	string attr[];
 	int nLines = fileread(lines, filePath);
 		// First, collect the names of all available attributes, found in header row. Attrib starts after col 5
 	string header[];
@@ -284,15 +293,29 @@ void CollectPartData (string filePath)
 	for (i = 0; i < nLines; ++i) {
 		// split line by character separator
 		string col[];
-		int n = strsplit(col, lines[i], ',');
-		if (col[0] == "Part") {
+		//int n = strsplit(col, lines[i], ',');
+		SplitPreserveQuotes(lines[i], ',');
+		if (SplitResults[0] == "Part") {
 			continue;	// skip header, if present
 		}
-		PartName[NumParts] = col[0];
-		PartValue[NumParts] = col[1];
-		PartDevice[NumParts] = col[2];
-		PartPackage[NumParts] = col[3];
-		PartHeadline[NumParts] = col[4];
+		PartName[NumParts] = SplitResults[0];
+		PartValue[NumParts] = SplitResults[1];
+		PartDevice[NumParts] = SplitResults[2];
+		PartPackage[NumParts] = SplitResults[3];
+		PartHeadline[NumParts] = SplitResults[4];
+		
+		// Zero all strings
+		for (i = 0; i < FoundAttributes; i ++)
+            attr[i] = "";
+		for (i = 0; i < FoundAttributes; i ++)
+		{
+			if (SplitResults[4+i] != "" && (4+i) < SplitResultLength)
+			{
+				attr[i] = SplitResults[4+i];
+				break;
+			}
+		}
+		PartAttributes[NumParts] = strjoin(attr, Separator);
 		NumParts++;
 	}
 	
@@ -528,8 +551,6 @@ void main(void){
 			dlgComboBox(Variants, VDsel) {
 				CurrentVariant = Variants[VDsel];
 				setvariant(CurrentVariant);
-				CollectPartData(CurrentVariant);
-				GeneratePartList();
 			}
 			dlgStretch(1);
 		}
