@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.3.2">
+<eagle version="9.0.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -308,6 +308,52 @@ MANUFACTURER:SAMTEC.</description>
 <wire x1="-0.889" y1="-0.889" x2="-0.889" y2="0.889" width="0.127" layer="39"/>
 <text x="-0.508" y="1.27" size="1.27" layer="25">&gt;NAME</text>
 <text x="-0.508" y="-2.286" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="UE27BCX4XXX">
+<pad name="1" x="0" y="0" drill="0.9144" first="yes"/>
+<pad name="2" x="-2.4892" y="0" drill="0.9144"/>
+<pad name="3" x="-2.4892" y="-1.9812" drill="0.9144"/>
+<pad name="4" x="0" y="-1.9812" drill="0.9144"/>
+<pad name="5" x="4.7752" y="-4.699" drill="2.3114"/>
+<pad name="6" x="-7.2644" y="-4.699" drill="2.3114"/>
+<wire x1="4.7752" y1="1.3208" x2="-7.2644" y2="1.3208" width="0.0762" layer="21"/>
+<wire x1="-7.2644" y1="1.3208" x2="-7.2644" y2="-14.986" width="0.0762" layer="21"/>
+<wire x1="-7.2644" y1="-14.986" x2="4.7752" y2="-14.986" width="0.0762" layer="21"/>
+<wire x1="4.7752" y1="-14.986" x2="4.7752" y2="1.3208" width="0.0762" layer="21"/>
+<wire x1="-7.5184" y1="1.5748" x2="5.0292" y2="1.5748" width="0.0762" layer="39"/>
+<wire x1="5.0292" y1="1.5748" x2="5.0292" y2="-2.54" width="0.0762" layer="39"/>
+<wire x1="5.0292" y1="-2.54" x2="7.493" y2="-2.54" width="0.0762" layer="39"/>
+<wire x1="7.493" y1="-2.54" x2="7.493" y2="-6.858" width="0.0762" layer="39"/>
+<wire x1="7.493" y1="-6.858" x2="5.0292" y2="-6.858" width="0.0762" layer="39"/>
+<wire x1="5.0292" y1="-6.858" x2="5.0292" y2="-15.24" width="0.0762" layer="39"/>
+<wire x1="5.0292" y1="-15.24" x2="-7.5184" y2="-15.24" width="0.0762" layer="39"/>
+<wire x1="-7.5184" y1="-15.24" x2="-7.5184" y2="-6.858" width="0.0762" layer="39"/>
+<wire x1="-7.5184" y1="-6.858" x2="-9.9822" y2="-6.858" width="0.0762" layer="39"/>
+<wire x1="-9.9822" y1="-6.858" x2="-9.9822" y2="-2.54" width="0.0762" layer="39"/>
+<wire x1="-9.9822" y1="-2.54" x2="-7.5184" y2="-2.54" width="0.0762" layer="39"/>
+<wire x1="-7.5184" y1="-2.54" x2="-7.5184" y2="1.5748" width="0.0762" layer="39"/>
+</package>
+<package name="DE9-RT-TH">
+<hole x="0" y="0" drill="3.1"/>
+<hole x="-24.99" y="0" drill="3.1"/>
+<pad name="5" x="-7.015" y="1.42" drill="0.9"/>
+<pad name="9" x="-8.385" y="-1.42" drill="0.9"/>
+<pad name="4" x="-9.755" y="1.42" drill="0.9"/>
+<pad name="8" x="-11.125" y="-1.42" drill="0.9"/>
+<pad name="3" x="-12.495" y="1.42" drill="0.9"/>
+<pad name="7" x="-13.865" y="-1.42" drill="0.9"/>
+<pad name="2" x="-15.235" y="1.42" drill="0.9"/>
+<pad name="6" x="-16.605" y="-1.42" drill="0.9"/>
+<pad name="1" x="-17.975" y="1.42" drill="0.9"/>
+<wire x1="-27.9" y1="-3.1" x2="-27.9" y2="9.5" width="0.1524" layer="51"/>
+<wire x1="-27.9" y1="9.5" x2="-20.89" y2="9.5" width="0.1524" layer="51"/>
+<wire x1="-20.89" y1="9.5" x2="-4.1" y2="9.5" width="0.1524" layer="51"/>
+<wire x1="-4.1" y1="9.5" x2="2.91" y2="9.5" width="0.1524" layer="51"/>
+<wire x1="2.91" y1="9.5" x2="2.91" y2="-3.1" width="0.1524" layer="51"/>
+<wire x1="2.91" y1="-3.1" x2="-27.9" y2="-3.1" width="0.1524" layer="51"/>
+<wire x1="-20.89" y1="9.5" x2="-20.89" y2="15.4" width="0.1524" layer="51"/>
+<wire x1="-20.89" y1="15.4" x2="-4.1" y2="15.4" width="0.1524" layer="51"/>
+<wire x1="-4.1" y1="15.4" x2="-4.1" y2="9.5" width="0.1524" layer="51"/>
 </package>
 </packages>
 <symbols>
@@ -709,6 +755,36 @@ MANUFACTURER:SAMTEC.</description>
 <connect gate="G$1" pin="GND" pad="4"/>
 <connect gate="G$1" pin="VCC" pad="1"/>
 </connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="UE27BC54130">
+<description>USB - B USB 2.0 Receptacle Connector 4 Position Through Hole, Right Angle</description>
+<gates>
+<gate name="G$1" symbol="USB2.0" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="UE27BCX4XXX">
+<connects>
+<connect gate="G$1" pin="DM" pad="2"/>
+<connect gate="G$1" pin="DP" pad="3"/>
+<connect gate="G$1" pin="GND" pad="4 5 6"/>
+<connect gate="G$1" pin="VCC" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="D09P33E4GX00LF">
+<gates>
+</gates>
+<devices>
+<device name="">
 <technologies>
 <technology name=""/>
 </technologies>
