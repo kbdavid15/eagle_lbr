@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.3.2">
+<eagle version="9.0.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -616,7 +616,7 @@ Source: http://www.ftdichip.com/Documents/DataSheets/DS_FT232R_v104.pdf</descrip
 <pin name="VCC" x="-12.7" y="22.86" length="short" direction="pwr"/>
 <pin name="3V3OUT" x="-12.7" y="-5.08" length="short" direction="out"/>
 <pin name="USBDP" x="-12.7" y="-10.16" length="short"/>
-<pin name="USBDM" x="-12.7" y="-12.7" length="short"/>
+<pin name="USBDM" x="-12.7" y="-7.62" length="short"/>
 <pin name="OSCO" x="-12.7" y="7.62" length="short" direction="out"/>
 <pin name="OSCI" x="-12.7" y="10.16" length="short" direction="in"/>
 <pin name="GND" x="15.24" y="-20.32" length="short" direction="pwr" rot="R180"/>
