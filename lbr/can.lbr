@@ -224,7 +224,7 @@ body 3.9 mm/JEDEC MS-012AC</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="TJA1051" prefix="IC">
+<deviceset name="TJA1051" prefix="U">
 <description>IC CAN TRANSEIVER HS 8SOIC</description>
 <gates>
 <gate name="G$1" symbol="TJA1051/3" x="0" y="0"/>
@@ -308,7 +308,7 @@ body 3.9 mm/JEDEC MS-012AC</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="TH8056KDC*" prefix="IC">
+<deviceset name="TH8056KDC*" prefix="U">
 <gates>
 <gate name="G$1" symbol="TH8056-KDC-A8" x="0" y="0"/>
 </gates>
