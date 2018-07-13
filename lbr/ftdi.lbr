@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.3.2">
+<eagle version="9.0.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -642,7 +642,7 @@ Source: http://www.ftdichip.com/Documents/DataSheets/DS_FT232R_v104.pdf</descrip
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="FT232R" prefix="IC">
+<deviceset name="FT232R" prefix="U">
 <description>Source: http://www.ftdichip.com/Documents/DataSheets/DS_FT232R_v104.pdf</description>
 <gates>
 <gate name="1" symbol="FT232R" x="0" y="0"/>
