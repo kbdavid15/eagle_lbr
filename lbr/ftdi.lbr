@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.0.1">
+<eagle version="9.1.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -614,9 +614,9 @@ Source: http://www.ftdichip.com/Documents/DataSheets/DS_FT232R_v104.pdf</descrip
 <text x="-10.16" y="26.67" size="1.778" layer="95">&gt;NAME</text>
 <text x="-10.16" y="-30.48" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="VCC" x="-12.7" y="22.86" length="short" direction="pwr"/>
-<pin name="3V3OUT" x="-12.7" y="-5.08" length="short" direction="out"/>
+<pin name="3V3OUT" x="-12.7" y="-2.54" length="short" direction="out"/>
 <pin name="USBDP" x="-12.7" y="-10.16" length="short"/>
-<pin name="USBDM" x="-12.7" y="-12.7" length="short"/>
+<pin name="USBDM" x="-12.7" y="-7.62" length="short"/>
 <pin name="OSCO" x="-12.7" y="7.62" length="short" direction="out"/>
 <pin name="OSCI" x="-12.7" y="10.16" length="short" direction="in"/>
 <pin name="GND" x="15.24" y="-20.32" length="short" direction="pwr" rot="R180"/>
@@ -635,7 +635,7 @@ Source: http://www.ftdichip.com/Documents/DataSheets/DS_FT232R_v104.pdf</descrip
 <pin name="CBUS4" x="15.24" y="-10.16" length="short" rot="R180"/>
 <pin name="VCCIO" x="-12.7" y="20.32" length="short" direction="pwr"/>
 <pin name="!RESET" x="-12.7" y="15.24" length="short" direction="in"/>
-<pin name="GND@A" x="-12.7" y="-17.78" length="short" direction="pwr"/>
+<pin name="GND@A" x="-12.7" y="-22.86" length="short" direction="pwr"/>
 <pin name="GND@1" x="15.24" y="-22.86" length="short" direction="pwr" rot="R180"/>
 <pin name="TEST" x="15.24" y="-15.24" length="short" direction="in" rot="R180"/>
 <pin name="GND@2" x="15.24" y="-25.4" length="short" direction="pwr" rot="R180"/>
