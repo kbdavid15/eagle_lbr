@@ -21,6 +21,14 @@ class schematicItem:
                     outstr += ("ATTR " + self.refdes + " " + str(key) + " \'" + self.attrDict[key] + "\';\n")
         return outstr
 
+    def output_scr_mpn(self):
+        # This function will output a string that can be written as a line for an Eagle script
+        outstr = ''
+        for key in self.attrDict:
+            if key =='MPN' and self.attrDict[key]:
+                outstr += ("ATTR " + self.refdes + " " + str(key) + " \'" + self.attrDict[key] + "\';\n")
+        return outstr
+
 currentpath = os.path.dirname(os.path.abspath(__file__))
 
 # get file name from args, or try to find a bom in the current directory
@@ -62,8 +70,10 @@ try:
 
     print("Finished reading file")
     for item in itemlist:
-        data = item.output_scr()
+        data = item.output_scr_mpn()
         output.write(data)
+
+    output.write("GROUP ALL;\nCHANGE DISPLAY OFF (>0 0);")
 
 except:
     print("Unable to open file")
