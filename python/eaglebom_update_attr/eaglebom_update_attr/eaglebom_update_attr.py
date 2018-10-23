@@ -6,6 +6,7 @@ import os, time, sys, re
 import csv
 
 defaultAttrs = ["Part", "Value", "Device", "Package", "Description"]
+outputAttrs = ["MPN, MF, VOLTAGE, PACKAGE"]
 
 class schematicItem:
     def __init__(self, refdes, attrDict):
