@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.1">
+<eagle version="9.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -47,7 +47,7 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
@@ -190,7 +190,11 @@ RN4020</text>
 <smd name="25" x="-2.2275" y="-5.2705" dx="1.016" dy="0.406" layer="1" rot="R90"/>
 <smd name="24" x="-2.8375" y="-5.2705" dx="1.016" dy="0.406" layer="1" rot="R90"/>
 <smd name="35" x="-0.29" y="-1.495" dx="2.705" dy="2.705" layer="1"/>
-<rectangle x1="-3.7515" y1="-5.2705" x2="3.7515" y2="5.2705" layer="41"/>
+<rectangle x1="-3.6322" y1="-5.1562" x2="3.6322" y2="5.1562" layer="41"/>
+<wire x1="-4.572" y1="5.588" x2="-4.572" y2="-6.096" width="0.127" layer="39"/>
+<wire x1="-4.572" y1="-6.096" x2="4.572" y2="-6.096" width="0.127" layer="39"/>
+<wire x1="4.572" y1="-6.096" x2="4.572" y2="5.588" width="0.127" layer="39"/>
+<wire x1="4.572" y1="5.588" x2="-4.572" y2="5.588" width="0.127" layer="39"/>
 </package>
 </packages>
 <symbols>
