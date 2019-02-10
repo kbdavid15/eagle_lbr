@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -189,12 +189,20 @@ RN4020</text>
 <smd name="26" x="-1.6175" y="-5.2705" dx="1.016" dy="0.406" layer="1" rot="R90"/>
 <smd name="25" x="-2.2275" y="-5.2705" dx="1.016" dy="0.406" layer="1" rot="R90"/>
 <smd name="24" x="-2.8375" y="-5.2705" dx="1.016" dy="0.406" layer="1" rot="R90"/>
-<smd name="35" x="-0.29" y="-1.495" dx="2.705" dy="2.705" layer="1"/>
-<rectangle x1="-3.6322" y1="-5.1562" x2="3.6322" y2="5.1562" layer="41"/>
+<rectangle x1="-3.6068" y1="-5.1308" x2="3.6068" y2="5.1308" layer="41"/>
 <wire x1="-4.572" y1="5.588" x2="-4.572" y2="-6.096" width="0.127" layer="39"/>
 <wire x1="-4.572" y1="-6.096" x2="4.572" y2="-6.096" width="0.127" layer="39"/>
 <wire x1="4.572" y1="-6.096" x2="4.572" y2="5.588" width="0.127" layer="39"/>
 <wire x1="4.572" y1="5.588" x2="-4.572" y2="5.588" width="0.127" layer="39"/>
+<pad name="P$1" x="-1.1917" y="-0.5933" drill="0.35" diameter="0.9017" shape="square"/>
+<pad name="P$2" x="-0.29" y="-0.5933" drill="0.35" diameter="0.9017" shape="square"/>
+<pad name="P$3" x="0.6117" y="-0.5933" drill="0.35" diameter="0.9017" shape="square"/>
+<pad name="P$4" x="-1.1917" y="-1.495" drill="0.35" diameter="0.9017" shape="square"/>
+<pad name="P$5" x="-0.29" y="-1.495" drill="0.35" diameter="0.9017" shape="square"/>
+<pad name="P$6" x="0.6117" y="-1.495" drill="0.35" diameter="0.9017" shape="square"/>
+<pad name="P$7" x="-1.1917" y="-2.3967" drill="0.35" diameter="0.9017" shape="square"/>
+<pad name="P$8" x="-0.29" y="-2.3967" drill="0.35" diameter="0.9017" shape="square"/>
+<pad name="P$9" x="0.6117" y="-2.3967" drill="0.35" diameter="0.9017" shape="square"/>
 </package>
 </packages>
 <symbols>
@@ -348,7 +356,7 @@ Source:&lt;br&gt;&lt;i&gt;Connect-List generated from &lt;/i&gt;&lt;b&gt;ATSAMB1
 <connect gate="-1" pin="C_EN" pad="30"/>
 <connect gate="-1" pin="GND" pad="11"/>
 <connect gate="-1" pin="GND@1" pad="26"/>
-<connect gate="-1" pin="PADDLE" pad="35"/>
+<connect gate="-1" pin="PADDLE" pad="P$1 P$2 P$3 P$4 P$5 P$6 P$7 P$8 P$9"/>
 <connect gate="-1" pin="RTC_CLK_N" pad="34"/>
 <connect gate="-1" pin="RTC_CLK_P" pad="33"/>
 <connect gate="-1" pin="VBAT" pad="27"/>
